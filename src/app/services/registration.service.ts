@@ -17,4 +17,8 @@ export class RegistrationService {
    public getData(): Observable<Question[]> {
     return this.http.get<Question[]>("https://localhost:44329/Registration");
   }
+
+  public UpdateData(question: Question):Observable<Question> {
+    return this.http.put<Question>(`https://localhost:44329/Registration`,question);
+  }
 }
