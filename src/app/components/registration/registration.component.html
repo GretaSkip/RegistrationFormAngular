@@ -1,0 +1,33 @@
+<div>
+
+    <div>
+        <table class="table table-striped">
+
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Registracijos požymiai</th>
+                    <th>Reikšmė</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let question of questions; index as i">
+                    <th>{{ i + 1 }}</th>
+                    <td>{{question.name}}</td>
+                      <td> 
+                        <select>
+                            <option [selected]="question.answerId == answer.id" *ngFor="let answer of question.answers" [value]="answer.id">
+                                {{answer.name}}
+                            </option>
+                          </select>
+                          <!--<select [disabled]="disabled" [(ngModel)]="question.answerId" [ngModelOptions]="{standalone: true}">
+                            <option [selected]="question.answerId == answer.id" *ngFor="let answer of question.answers" value="{{answer.id}}">{{answers.name}}</option>
+                            </select>-->
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+        <button type="button" class="btn btn-primary">Koreguoti požymius</button>
+    </div>
