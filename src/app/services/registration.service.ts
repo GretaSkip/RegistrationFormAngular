@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Question } from 'src/app/models/registration';
+import { QuestionUpdate } from '../models/questionUpdate';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,7 @@ export class RegistrationService {
     return this.http.get<Question[]>("https://localhost:44329/Registration");
   }
 
-  public UpdateData(question: Question):Observable<Question> {
+  public UpdateData(question: QuestionUpdate):Observable<Question> {
     return this.http.put<Question>(`https://localhost:44329/Registration`,question);
   }
 }

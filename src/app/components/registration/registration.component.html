@@ -16,7 +16,7 @@
                     <th>{{ i + 1 }}</th>
                     <td>{{question.name}}</td>
                       <td> 
-                        <select>
+                        <select [disabled]="disabled" [(ngModel)]="question.answerId">
                             <option [selected]="question.answerId == answer.id" *ngFor="let answer of question.answers" [value]="answer.id">
                                 {{answer.name}}
                             </option>
@@ -26,6 +26,6 @@
             </tbody>
 
         </table>
-        <button type="button" class="btn btn-primary">Koreguoti požymius</button>
-        <button type="button" class="btn btn-primary">Saugoti pataisymus</button>
+        <button type="button" class="btn btn-primary" *ngIf="disabled" (click)="disabled = false">Koreguoti požymius</button>
+        <button type="button" class="btn btn-primary" [disabled]="disabled" (click)="updateData()">Saugoti pataisymus</button>
     </div>
