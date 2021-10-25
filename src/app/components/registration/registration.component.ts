@@ -36,26 +36,10 @@ export class RegistrationComponent implements OnInit {
       }
 
       this.registrationService.UpdateData(updatedQuestion).subscribe(()=>{
-        // for (let i = 0; i < this.questions.length; i++) {
-        //   const que = this.questions[i];
-        //   if(que.id == updatedQuestion.id){
-        //     que.name = updatedQuestion.name;
-        //     que.answerId = updatedQuestion.answerId;
-        //     que.answers = updatedQuestion.answers;
-        //   }
-        // }
       })
          this.disabled = true;
+    });
 
-  });
-
-   
-
-   
-    
   }
-
-  
- 
 
 }
